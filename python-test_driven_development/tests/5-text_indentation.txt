@@ -1,54 +1,76 @@
-===================
-Testing function that prints indented text
-===================
+# Test for 5-text_indentation.py
+===========================
 
-Imported function from 5-text_indentation.py
-===================
->>> text_indentation = __import__('5-text_indentation').text_indentation
+Using ``text_indentation``
+---------------------
 
->>> text_indentation("Hello. How are you? I'm fine.")
-Hello.
+Import the function:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-How are you?
+Basic usage:
+    >>> text_indentation("Hello. World? Yes: No.")
+    Hello.
+    <BLANKLINE>
+    World?
+    <BLANKLINE>
+    Yes:
+    <BLANKLINE>
+    No.
+    <BLANKLINE>
 
-I'm fine.
+Test with no special characters:
+    >>> text_indentation("Hello World")
+    Hello World
 
->>> text_indentation("Wait... What?Really:Yes.")
-Wait...
+Test with multiple spaces:
+    >>> text_indentation("Hello   .   World")
+    Hello   .
+    <BLANKLINE>
+    World
 
-...
+Test with multiple special characters in sequence:
+    >>> text_indentation("Hi:.?.")
+    Hi:
+    <BLANKLINE>
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    .
+    <BLANKLINE>
 
-What?
+Test with empty string:
+    >>> text_indentation("")
 
-Really:
+Test with only special characters:
+    >>> text_indentation(".?:")
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+    <BLANKLINE>
 
-Yes.
+Test with non-string input:
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+    TypeError: text must be a string
 
->>> text_indentation("   Leading spaces should go away. Trailing too?   Yes :   ok   ")
-Leading spaces should go away.
+Test with None:
+    >>> text_indentation(None)
+    Traceback (most recent call last):
+    TypeError: text must be a string
 
-Trailing too?
+Test with newlines:
+    >>> text_indentation("Hello.\nWorld.")
+    Hello.
+    <BLANKLINE>
+    World.
+    <BLANKLINE>
 
-Yes:
-
-ok
-
->>> text_indentation("No punctuation here")
-No punctuation here
-
->>> text_indentation("")
-<BLANKLINE>
-
->>> text_indentation(123)
-Traceback (most recent call last):
-TypeError: text must be a string
-
->>> text_indentation(None)
-Traceback (most recent call last):
-TypeError: text must be a string
-
->>> text_indentation("No double punctuation!! Still one line.")
-No double punctuation!! Still one line.
-
->>> text_indentation("Dot.Middle:End?")
-Dot.
+Test with spaces at beginning and end:
+    >>> text_indentation("   Hello.   World.   ")
+    Hello.
+    <BLANKLINE>
+    World.
+    <BLANKLINE>
