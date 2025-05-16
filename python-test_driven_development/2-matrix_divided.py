@@ -26,9 +26,11 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    if (not isinstance(matrix, list) or
-            any(not isinstance(row, list) for row in matrix) or
-            any(not isinstance(num, (int, float)) for row in matrix for num in row)):
+    if not isinstance(matrix, list):
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+    if any(not isinstance(row, list) for row in matrix):
+        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+    if any(not isinstance(num, (int, float)) for row in matrix for num in row):
         raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
 
     row_length = len(matrix[0])
