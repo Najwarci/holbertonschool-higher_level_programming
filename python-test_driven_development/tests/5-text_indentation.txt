@@ -1,51 +1,54 @@
 ===================
-Testing function that indents text
+Testing function that prints indented text
 ===================
 
 Imported function from 5-text_indentation.py
 ===================
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
->>> text_indentation("Hello. How are you? I'm fine:")
+>>> text_indentation("Hello. How are you? I'm fine.")
 Hello.
-<BLANKLINE>
+
 How are you?
-<BLANKLINE>
-I'm fine:
-<BLANKLINE>
 
->>> text_indentation("This is a sentence. This is another?And a third: Done.")
-This is a sentence.
-<BLANKLINE>
-This is another?
-<BLANKLINE>
-And a third:
-<BLANKLINE>
-Done.
-<BLANKLINE>
+I'm fine.
 
->>> text_indentation("  Extra spaces before.  And after:Done.  ")
-Extra spaces before.
-<BLANKLINE>
-And after:
-<BLANKLINE>
-Done.
-<BLANKLINE>
+>>> text_indentation("Wait... What?Really:Yes.")
+Wait...
 
->>> text_indentation("No special punctuation at the end")
-No special punctuation at the end
+...
+
+What?
+
+Really:
+
+Yes.
+
+>>> text_indentation("   Leading spaces should go away. Trailing too?   Yes :   ok   ")
+Leading spaces should go away.
+
+Trailing too?
+
+Yes:
+
+ok
+
+>>> text_indentation("No punctuation here")
+No punctuation here
 
 >>> text_indentation("")
-<BLANKLINE>
-
->>> text_indentation("Ends with colon:")
-Ends with colon:
-<BLANKLINE>
-
->>> text_indentation("Ends with period.")
-Ends with period.
 <BLANKLINE>
 
 >>> text_indentation(123)
 Traceback (most recent call last):
 TypeError: text must be a string
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation("No double punctuation!! Still one line.")
+No double punctuation!! Still one line.
+
+>>> text_indentation("Dot.Middle:End?")
+Dot.
