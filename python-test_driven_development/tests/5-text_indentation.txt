@@ -1,0 +1,51 @@
+===================
+Testing function that indents text
+===================
+
+Imported function from 5-text_indentation.py
+===================
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Hello. How are you? I'm fine:")
+Hello.
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+I'm fine:
+<BLANKLINE>
+
+>>> text_indentation("This is a sentence. This is another?And a third: Done.")
+This is a sentence.
+<BLANKLINE>
+This is another?
+<BLANKLINE>
+And a third:
+<BLANKLINE>
+Done.
+<BLANKLINE>
+
+>>> text_indentation("  Extra spaces before.  And after:Done.  ")
+Extra spaces before.
+<BLANKLINE>
+And after:
+<BLANKLINE>
+Done.
+<BLANKLINE>
+
+>>> text_indentation("No special punctuation at the end")
+No special punctuation at the end
+
+>>> text_indentation("")
+<BLANKLINE>
+
+>>> text_indentation("Ends with colon:")
+Ends with colon:
+<BLANKLINE>
+
+>>> text_indentation("Ends with period.")
+Ends with period.
+<BLANKLINE>
+
+>>> text_indentation(123)
+Traceback (most recent call last):
+TypeError: text must be a string
