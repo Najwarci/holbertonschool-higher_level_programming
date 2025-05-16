@@ -2,7 +2,7 @@
 Testing function that divides a matrix
 ===================
 
->>> matrix_divided = __import__('matrix_divided').matrix_divided
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
 
 >>> matrix = [[1, 2], [3, 4]]
 >>> matrix_divided(matrix, 2)
