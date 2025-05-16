@@ -24,6 +24,6 @@ def text_indentation(text):
         if c in seps:
             print(line.strip())
             print()
-            line = "" 
+            line = ""
     if line.strip():
         print(line.strip(), end="")
