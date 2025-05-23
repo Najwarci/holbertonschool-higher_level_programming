@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines my square with size, position and a method to compute and print"""
+"""Defines my square with private size, position, and print method"""
 
 
 class Square:
@@ -44,6 +44,13 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        """Prints the square with '#' considering the position offset"""
+        """Prints the square with '#' considering its position"""
         if self.__size == 0:
-            prin
+            print()
+        else:
+            # Print vertical offset
+            for _ in range(self.__position[1]):
+                print()
+            # Print each line of the square
+            for _ in range(self.__size):
+                print(" " * self.__position[0] + "#" * self.__size)
