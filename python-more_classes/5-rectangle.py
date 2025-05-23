@@ -27,4 +27,37 @@ class Rectangle:
     @property
     def height(self):
         """Retrieve the height."""
-        return self.__hei
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """Set the height with validation."""
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
+
+    def area(self):
+        """Returns the rectangle area"""
+        return self.__height * self.__width
+
+    def perimeter(self):
+        """Returns the rectangle perimeter"""
+        if self.__height == 0 or self.__width == 0:
+            return 0
+        return (self.__height * 2) + (self.__width * 2)
+
+    def __str__(self):
+        """Return the rectangle as a string of '#' characters."""
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        return '\n'.join(["#" * self.__width for _ in range(self.__height)])
+
+    def __repr__(self):
+        """Return a string representation that can recreate the instance."""
+        return f"Rectangle({self.__width}, {self.__height})"
+
+    def __del__(self):
+        """Print a message when an instance is deleted."""
+        print("Bye rectangle...")
