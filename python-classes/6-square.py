@@ -6,7 +6,10 @@ class Square:
     """Class that defines my square with a size and a position"""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Initializes square with optional size and position, and validates them"""
+        """
+        Initializes square with optional size and position,
+        and validates them
+        """
         self.size = size
         self.position = position
 
