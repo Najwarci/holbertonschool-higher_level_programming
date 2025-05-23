@@ -33,9 +33,9 @@ class Square:
     def position(self, value):
         """Sets the position of the square with type and value verification"""
         if (not isinstance(value, tuple) or
-            len(value) != 2 or
-            not all(isinstance(n, int) for n in value) or
-            not all(n >= 0 for n in value)):
+                len(value) != 2 or
+                not all(isinstance(n, int) for n in value) or
+                not all(n >= 0 for n in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
@@ -48,9 +48,7 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            # Print vertical offset
             for _ in range(self.__position[1]):
                 print()
-            # Print each line of the square
             for _ in range(self.__size):
                 print(" " * self.__position[0] + "#" * self.__size)
