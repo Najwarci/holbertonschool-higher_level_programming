@@ -1,0 +1,36 @@
+==============================
+Test for the BaseGeometry class
+==============================
+
+Importing the class:
+--------------------
+>>> BaseGeometry = __import__('6-base_geometry').BaseGeometry
+
+Creating an instance:
+---------------------
+>>> bg = BaseGeometry()
+
+Calling area (should raise an Exception):
+-----------------------------------------
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+Valid integer value:
+--------------------
+>>> bg.integer_validator("width", 10)
+
+Invalid type (should raise TypeError):
+--------------------------------------
+>>> bg.integer_validator("width", "10")
+Traceback (most recent call last):
+...
+TypeError: width must be an integer
+
+Invalid value (should raise ValueError):
+----------------------------------------
+>>> bg.integer_validator("width", -5)
+Traceback (most recent call last):
+...
+ValueError: width must be greater than 0
