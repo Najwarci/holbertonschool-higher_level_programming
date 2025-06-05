@@ -13,7 +13,7 @@ class CustomObject:
         print(f"Age: {self.age}")
         print(f"Is Student: {self.is_student}")
 
-    def serialize(self, filename):
+    def deserialize(cls, filename):
         try:
             with open(filename, 'wb') as file:
                 pickle.dump(self, file)
