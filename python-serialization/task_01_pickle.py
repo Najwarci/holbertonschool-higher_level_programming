@@ -5,7 +5,7 @@ import pickle
 class CustomObject:
     def __init__(self, name, age, is_student):
         self.name = name
-        self.age = age 
+        self.age = age
         self.is_student = is_student
 
     def display(self):
@@ -24,6 +24,6 @@ class CustomObject:
     def deserlialize(cls, filename):
         try:
             with open(filename, 'rb') as file:
-                return pickle;load(file)
+                return pickle.load(file)
         except Exception:
             return None
