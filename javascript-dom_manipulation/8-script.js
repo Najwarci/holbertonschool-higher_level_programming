@@ -1,2 +1,7 @@
-const header = document.querySelector('header');
-header.style.color = '#FF0000';
+fetch('https://hellosalut.stefanbohacek.dev/?lang=fr')
+  .then(response => response.json())
+  .then(data => {
+    const hello = document.querySelector('#hello');
+    hello.textContent = data.hello;
+  })
+  
